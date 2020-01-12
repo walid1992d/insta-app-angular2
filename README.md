@@ -1,6 +1,9 @@
 # insta-app-angular2
 Boilerplate allows you to write Angular app and package it out of the box as  web,mobile and desktop apps, it's boiler plate uses Angular 8 and Typescript 3 for the web, Ionic 4 (with ionic cli 5) for the mobile, and  Electron 5 for desktop.
 
+<i>
+for  older version which works on Angular5 and Ionic 3 follow this link
+<a href="https://github.ibm.com/Walid-Abou-Ali/insta-app-angular">https://github.ibm.com/Walid-Abou-Ali/insta-app-angular </a><i>
 
 # Overview
 The name stands for “Instant App using Angular" so the purpose of it is to allow the developers to build apps using Angular in the easiest way, and I when says apps I mean web, mobile and desktop apps, so the developer can write the normal Ionic/Angular code he used to do for web and  build  it as IOS/Android App and OSX/Windows/Linux app without the need to learn new frameworks.
