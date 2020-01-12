@@ -1,0 +1,29 @@
+
+<ion-header>
+  <ion-toolbar color="primary">
+
+      <ion-buttons slot="start">
+          <ion-button  [routerLink]="['/home']">
+            <ion-icon name="arrow-back"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+    <ion-title>playground</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+ <h2>Platform Check</h2>
+ 
+ <table>
+  <ng-container *ngFor="let platformAspect of platformCheckData">
+    <tr>
+      <td>{{platformAspect.name}}</td>
+      <td [style.color]="platformAspect.fullfilled ? 'green' : 'red'">{{platformAspect.fullfilled}}</td>
+
+    </tr>
+  </ng-container>
+ </table>
+
+ Test component
+ <testcomponent></testcomponent>
+</ion-content>

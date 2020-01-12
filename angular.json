@@ -66,6 +66,22 @@
                 }
               ]
             },
+            "dev": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.dev.ts"
+                }
+              ]
+            },
+            "local": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.local.ts"
+                }
+              ]
+            },
             "ci": {
               "progress": false
             }
@@ -79,6 +95,12 @@
           "configurations": {
             "production": {
               "browserTarget": "app:build:production"
+            },
+            "local": {
+              "browserTarget": "app:build:local"
+            },
+            "dev": {
+              "browserTarget": "app:build:dev"
             },
             "ci": {
               "progress": false
@@ -141,6 +163,12 @@
             "production": {
               "devServerTarget": "app:serve:production"
             },
+            "local": {
+              "devServerTarget": "app:build:local"
+            },
+            "dev": {
+              "devServerTarget": "app:build:dev"
+            },
             "ci": {
               "devServerTarget": "app:serve:ci"
             }
@@ -154,6 +182,12 @@
           "configurations": {
             "production": {
               "browserTarget": "app:build:production"
+            },  
+            "local": {
+              "browserTarget": "app:build:local"
+            },
+            "dev": {
+              "browserTarget": "app:build:dev"
             }
           }
         },
@@ -167,6 +201,15 @@
             "production": {
               "cordovaBuildTarget": "app:ionic-cordova-build:production",
               "devServerTarget": "app:serve:production"
+            },
+ 
+            "local": {
+              "cordovaBuildTarget": "app:ionic-cordova-build:local",
+              "devServerTarget": "app:serve:local"
+            },
+            "dev": {
+              "cordovaBuildTarget": "app:ionic-cordova-build:dev",
+              "devServerTarget": "app:serve:dev"
             }
           }
         }
