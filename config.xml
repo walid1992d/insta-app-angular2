@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="io.garage.app.angular2" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-     <name>IBM Garage Angular</name>
+    <name>IBM Garage Angular</name>
     <description>IBM Garage Template</description>
     <author email="walid.abou.ali@ibm.com" href="https://www.ibm.com/ae-en/">Walid Abou Ali</author>
     <content src="index.html" />
