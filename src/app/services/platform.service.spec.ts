@@ -13,7 +13,7 @@ describe('PlatformService', () => {
     expect(service).toBeTruthy();
   });
 
-  describe('Platforms', () => {
+  fdescribe('Platforms', () => {
     it('Browser should return right booleans' , () => {
       const service: PlatformService = TestBed.get(PlatformService);
       const platform: Platform = TestBed.get(Platform);
@@ -33,7 +33,9 @@ describe('PlatformService', () => {
       expect(service.isIOSDevice).toBe(false);
       expect(service.isMobileBrowser).toBe(true);
       expect(service.isMobileDevice).toBe(false);
-
+      expect(service.isWindowsDevice).toBe(false);
+      expect(service.isOSXDevice).toBe(false);
+      expect(service.isLinuxDevice).toBe(false);
 
     });
     it('Desktop Browser should return right booleans' , () => {
@@ -56,7 +58,9 @@ describe('PlatformService', () => {
       expect(service.isMobileBrowser).toBe(false);
       expect(service.isMobileDevice).toBe(false);
 
-
+      expect(service.isWindowsDevice).toBe(false);
+      expect(service.isOSXDevice).toBe(false);
+      expect(service.isLinuxDevice).toBe(false);
     });
     it('Mobile Browser should return right booleans' , () => {
       const service: PlatformService = TestBed.get(PlatformService);
@@ -77,7 +81,9 @@ describe('PlatformService', () => {
       expect(service.isIOSDevice).toBe(false);
       expect(service.isMobileBrowser).toBe(true);
       expect(service.isMobileDevice).toBe(false);
-
+      expect(service.isWindowsDevice).toBe(false);
+      expect(service.isOSXDevice).toBe(false);
+      expect(service.isLinuxDevice).toBe(false);
 
     });
     it('IOS Browser should return right booleans' , () => {
@@ -99,7 +105,9 @@ describe('PlatformService', () => {
       expect(service.isIOSDevice).toBe(false);
       expect(service.isMobileBrowser).toBe(true);
       expect(service.isMobileDevice).toBe(false);
-
+      expect(service.isWindowsDevice).toBe(false);
+      expect(service.isOSXDevice).toBe(false);
+      expect(service.isLinuxDevice).toBe(false);
 
     });
     it('Android Browser should return right booleans' , () => {
@@ -121,7 +129,9 @@ describe('PlatformService', () => {
       expect(service.isIOSDevice).toBe(false);
       expect(service.isMobileBrowser).toBe(true);
       expect(service.isMobileDevice).toBe(false);
-
+      expect(service.isWindowsDevice).toBe(false);
+      expect(service.isOSXDevice).toBe(false);
+      expect(service.isLinuxDevice).toBe(false);
 
     });
 
@@ -145,7 +155,9 @@ describe('PlatformService', () => {
       expect(service.isMobileBrowser).toBe(false);
       expect(service.isMobileDevice).toBe(true);
 
-
+      expect(service.isWindowsDevice).toBe(false);
+      expect(service.isOSXDevice).toBe(false);
+      expect(service.isLinuxDevice).toBe(false);
     });
 
     it('IOS Device should return right booleans' , () => {
@@ -167,7 +179,9 @@ describe('PlatformService', () => {
       expect(service.isIOSDevice).toBe(true);
       expect(service.isMobileBrowser).toBe(false);
       expect(service.isMobileDevice).toBe(true);
-
+      expect(service.isWindowsDevice).toBe(false);
+      expect(service.isOSXDevice).toBe(false);
+      expect(service.isLinuxDevice).toBe(false);
 
     });
     it('IOS Device should return right booleans' , () => {
@@ -189,7 +203,9 @@ describe('PlatformService', () => {
       expect(service.isIOSDevice).toBe(false);
       expect(service.isMobileBrowser).toBe(false);
       expect(service.isMobileDevice).toBe(true);
-
+      expect(service.isWindowsDevice).toBe(false);
+      expect(service.isOSXDevice).toBe(false);
+      expect(service.isLinuxDevice).toBe(false);
 
     });
     it('Desktop Device should return right booleans' , () => {
@@ -215,6 +231,97 @@ describe('PlatformService', () => {
 
     });
 
+    it('Windows Device should return right booleans' , () => {
+      const service: PlatformService = TestBed.get(PlatformService);
+      const platform: Platform = TestBed.get(Platform);
+      platform.is = (name: any) => {
+        if (name === 'electron') {
+        return true;
+        }
+        return false;
+      };
+      service.platform = platform;
+      (navigator as any).__defineGetter__('userAgent', () => {
+        return 'Windows NT 10.0';
+      });
+      expect(service.isAndroidBrowser).toBe(false);
+      expect(service.isAndroidDevice).toBe(false);
+      expect(service.isBrowser).toBe(false);
+      expect(service.isDesktopBrowser).toBe(false);
+      expect(service.isDesktopDevice).toBe(true);
+      expect(service.isIOSBrowser).toBe(false);
+      expect(service.isIOSDevice).toBe(false);
+      expect(service.isMobileBrowser).toBe(false);
+      expect(service.isMobileDevice).toBe(false);
+      expect(service.isWindowsDevice).toBe(true);
+      expect(service.isOSXDevice).toBe(false);
+      expect(service.isLinuxDevice).toBe(false);
+
+
+
+
+    });
+
+    it('OSX Device should return right booleans' , () => {
+      const service: PlatformService = TestBed.get(PlatformService);
+      const platform: Platform = TestBed.get(Platform);
+      platform.is = (name: any) => {
+        if (name === 'electron') {
+        return true;
+        }
+        return false;
+      };
+      service.platform = platform;
+      (navigator as any).__defineGetter__('userAgent', () => {
+        return 'Mac';
+      });
+      expect(service.isAndroidBrowser).toBe(false);
+      expect(service.isAndroidDevice).toBe(false);
+      expect(service.isBrowser).toBe(false);
+      expect(service.isDesktopBrowser).toBe(false);
+      expect(service.isDesktopDevice).toBe(true);
+      expect(service.isIOSBrowser).toBe(false);
+      expect(service.isIOSDevice).toBe(false);
+      expect(service.isMobileBrowser).toBe(false);
+      expect(service.isMobileDevice).toBe(false);
+      expect(service.isWindowsDevice).toBe(false);
+      expect(service.isOSXDevice).toBe(true);
+      expect(service.isLinuxDevice).toBe(false);
+
+
+
+
+    });
+    it('Linux Device should return right booleans' , () => {
+      const service: PlatformService = TestBed.get(PlatformService);
+      const platform: Platform = TestBed.get(Platform);
+      platform.is = (name: any) => {
+        if (name === 'electron') {
+        return true;
+        }
+        return false;
+      };
+      service.platform = platform;
+      (navigator as any).__defineGetter__('userAgent', () => {
+        return 'Linux';
+      });
+      expect(service.isAndroidBrowser).toBe(false);
+      expect(service.isAndroidDevice).toBe(false);
+      expect(service.isBrowser).toBe(false);
+      expect(service.isDesktopBrowser).toBe(false);
+      expect(service.isDesktopDevice).toBe(true);
+      expect(service.isIOSBrowser).toBe(false);
+      expect(service.isIOSDevice).toBe(false);
+      expect(service.isMobileBrowser).toBe(false);
+      expect(service.isMobileDevice).toBe(false);
+      expect(service.isWindowsDevice).toBe(false);
+      expect(service.isOSXDevice).toBe(false);
+      expect(service.isLinuxDevice).toBe(true);
+
+
+
+
+    });
 
   });
 });

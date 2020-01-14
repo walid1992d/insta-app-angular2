@@ -34,6 +34,10 @@ export class PlaygroundPage implements OnInit {
       'isIOSDevice',
       'isAndroidDevice',
       'isDesktopDevice',
+      'isWindowsDevice',
+      'isOSXDevice',
+      'isLinuxDevice',
+
     ];
     this.platformCheckData = checks.map(aspect => ({
      name: aspect,
