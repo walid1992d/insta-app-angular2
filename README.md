@@ -125,6 +125,9 @@ THe boiler comes out of the box with service `PlatfromService`  that detects the
 | isIOSDevice      | returns true if the app is running as mobile app on IOS Device                      |
 | isAndroidDevice  | returns true if the app is running as mobile app on Android Device                  |
 | isDesktopDevice  | returns true if the app is running as desktop app on a desktop device               |
+| isWindowsDevice  | returns true if the app is running as desktop app on a desktop Windows device               |
+| isOSXDevice  | returns true if the app is running as desktop app on a desktop Mac OSX device               |
+| isLinuxDevice  | returns true if the app is running as desktop app on a desktop Linux device               |
 
 you can find sample implementation in  `src/app/pages/playground`
 
