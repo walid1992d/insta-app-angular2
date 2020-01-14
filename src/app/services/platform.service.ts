@@ -46,29 +46,15 @@ export class PlatformService {
   }
 
   public get isWindowsDevice() {
-    return this.isDesktopDevice && this.OS === 'Windows';
+    return this.isDesktopDevice && window.navigator.userAgent.includes('Windows');
   }
 
   public get isOSXDevice() {
-    return this.isDesktopDevice && this.OS === 'OSX';
+    return this.isDesktopDevice && window.navigator.userAgent.includes('Mac');
   }
 
   public get isLinuxDevice() {
-    return this.isDesktopDevice && this.OS === 'Linux';
+    return this.isDesktopDevice &&  window.navigator.userAgent.includes('Linux');
   }
 
-
-
-  private get OS(): string {
-    let OSName = 'Unknown';
-    if (window.navigator.userAgent.indexOf('Windows NT 10.0') !== -1) { OSName = 'Windows'; }
-    if (window.navigator.userAgent.indexOf('Windows NT 6.2') !== -1) { OSName = 'Windows'; }
-    if (window.navigator.userAgent.indexOf('Windows NT 6.1') !== -1) { OSName = 'Windows'; }
-    if (window.navigator.userAgent.indexOf('Windows NT 6.0') !== -1) { OSName = 'Windows'; }
-    if (window.navigator.userAgent.indexOf('Windows NT 5.1') !== -1) { OSName = 'Windows'; }
-    if (window.navigator.userAgent.indexOf('Windows NT 5.0') !== -1) { OSName = 'Windows'; }
-    if (window.navigator.userAgent.indexOf('Mac')            !== -1) { OSName = 'OSX'; }
-    if (window.navigator.userAgent.indexOf('Linux')          !== -1) { OSName = 'Linux'; }
-    return OSName;
-  }
 }
