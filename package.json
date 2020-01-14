@@ -16,7 +16,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "start:android": "ionic cordova run android --device --configuration local",
-    "start:ios": "ionic cordova run ios --device --configuration local",
+    "start:ios": "ionic cordova emulate ios --configuration local",
     "start:desktop": "npm run build-local  && electron . ",
     "build:browser:dev": "npm run build-dev",
     "build:browser:prod": "npm run build-prod ",
