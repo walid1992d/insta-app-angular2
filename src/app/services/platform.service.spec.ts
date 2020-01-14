@@ -13,7 +13,7 @@ describe('PlatformService', () => {
     expect(service).toBeTruthy();
   });
 
-  fdescribe('Platforms', () => {
+  describe('Platforms', () => {
     it('Browser should return right booleans' , () => {
       const service: PlatformService = TestBed.get(PlatformService);
       const platform: Platform = TestBed.get(Platform);
