@@ -9,8 +9,12 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PlatformService } from './services/platform.service';
+
+
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { LoggerService } from './services/logger.service';
+import { StateService } from './services/state.service';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -20,6 +24,8 @@ import { environment } from '../environments/environment';
     StatusBar,
     SplashScreen,
     PlatformService,
+    LoggerService,
+    StateService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
