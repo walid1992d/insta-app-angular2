@@ -3,6 +3,10 @@
   "compilerOptions": {
     "outDir": "./out-tsc/app",
     "types": [],
+
+  },
+  "rules": {
+    "no-console": true,
   },
   "include": [
     "src/**/*.ts",
