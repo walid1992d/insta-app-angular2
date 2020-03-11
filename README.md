@@ -131,10 +131,49 @@ THe boiler comes out of the box with service `PlatfromService`  that detects the
 
 you can find sample implementation in  `src/app/pages/playground`
 
+# Logging 
+the boilerplate comes out of the box with a logger service that has 3 functions :`log`, `error`,`warn`, the functions just currently just calls the browser `console` functions and you can add in them any logging service you need. The logger service source code is in `src/app/services/logger.service.ts`
+
+# State
+the boilerplate comes out of the box with state service which gives you the capability of having a shared state in your app with ability to subscribe for state changes, in other words it's a simplified version of `Redux`. The state service exposes these functions :
+
+- ```getState(key?: string)```
+    
+    it's used to get a value from your state, here is an example use assuming you have this state:
+    ```
+    {
+        "token": 1234,
+        "username: "user"
+    }
+
+    ```
+    ```
+        stateService.getState('token') // returns 1234 
+        stateService.getState() // returns the whole state object
+    ```
+
+- ```setState(key: string, value: any)```
+
+    sets a value in the state;
+
+- ```onStateChange(key?: string)```
+
+    returns rxjs observable that listen to your state changes, you can use it 2 ways:
+
+    ```
+    onStateChange('token').subscribe((value)=> {
+        console.log(value) // logs the token each time it changes in the state
+    });
+
+      onStateChange().subscribe((state)=> {
+        console.log(state) // logs the whole state object eachtime any value in the  state is changed
+    })
+    ```
+
 
 
 # Unit Testing
-the boiler plate uses Jasmin with Karma task runner for unit testing as they are the standard for Angular projects
+the boilerplate uses Jasmin with Karma task runner for unit testing as they are the standard for Angular projects
 
 to run the unit tests use the command
 ```
