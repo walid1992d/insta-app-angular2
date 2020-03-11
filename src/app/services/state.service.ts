@@ -12,11 +12,14 @@ export const initialState = {
   providedIn: 'root'
 })
 export class StateService {
-  private logEnabled = false;
   constructor(private logger: LoggerService ) {
     if (environment.envCode !== 'prod') {
-      this.logEnabled = true;
       this.logger.log('Logging Enabled in State');
+      this.logger.log('INITIAL STATE:', this.getState());
+
+      this.onStateChange().subscribe(() => {
+        this.logger.log('CURRENT STATE:', this.getState());
+      });
     }
   }
   private state = initialState;
@@ -34,15 +37,8 @@ export class StateService {
 
 
   setState(key: string, value: any) {
-    const existingValue = this.getState(key);
 
     this.state[key] = value;
-
-    if (this.logEnabled) {
-    this.logger.log('STATE VALUE CHANGE: ' ,  {key, existingValue , newValue: value});
-
-    this.logger.log('CURRENT STATE: ' , this.getState());
-    }
 
     this.stateChanged.next(key);
   }

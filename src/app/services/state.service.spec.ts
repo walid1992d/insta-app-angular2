@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { StateService, initialState } from './state.service';
 import { LoggerService } from './logger.service';
 
-fdescribe('StateService', () => {
+describe('StateService', () => {
   beforeEach(() => TestBed.configureTestingModule({providers: [LoggerService]}));
 
   it('should be created', () => {
